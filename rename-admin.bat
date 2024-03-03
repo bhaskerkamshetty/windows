@@ -9,4 +9,4 @@ wmic useraccount where name='Administrator' rename 'NEWUSERNAME'
 net user NEWUSERNAME /active:yes
 net user NEWUSERNAME PASSWORD
 net user INITIALUSERNAME /delete
-shutdown -r
+shutdown.exe /r /t 00
