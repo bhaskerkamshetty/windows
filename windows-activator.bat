@@ -1,1 +1,2 @@
+@ECHO OFF
 irm https://massgrave.dev/get | iex
