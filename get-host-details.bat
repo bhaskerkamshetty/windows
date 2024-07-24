@@ -1,6 +1,6 @@
 @ECHO OFF
 rem #Author: Bhasker Kamshetty
-rem #Description: This script collects hostname, username, serial# & mac address and stores data in Details.txt
+rem #Description: This script collects hostname, username, serial#, mac address & stores data in Details.txt
 rem #Date: 20th February 2024
 
 rem #Appends Hostname
