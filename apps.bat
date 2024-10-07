@@ -8,3 +8,6 @@ winget install --id Microsoft.PowerShell --source winget
 
 rem #Installs PowerToys
 winget install --id Microsoft.PowerToys --source winget
+
+rem #Installs Git
+winget install --id Git.Git -e --source winget
