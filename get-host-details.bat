@@ -4,13 +4,14 @@ rem #Description: This script collects hostname, username, serial#, mac address 
 rem #Date: 20th February 2024
 
 rem #Appends Hostname
-hostname >> Details.txt
+hostname >> Details.log
 
 rem #Appends Username
-whoami >> Details.txt
+whoami >> Details.log
 
 rem #Appends Serial Number
-for /F "skip=1 tokens=4" %%s in ('wmic bios list BRIEF') do echo %%s >> Details.txt
+for /f "tokens=2 delims==" %%a in ('wmic bios get serialnumber /value') do set "serialnumber=%%a"
+echo %serialnumber% >> Details.log
 
 rem #Appends MAC Address
 SETLOCAL enabledelayedexpansion
@@ -20,5 +21,5 @@ FOR /f "delims=" %%a IN ('getmac /v ^|find /i "Ethernet"') DO (
   IF "!element:~2,1!!element:~5,1!!element:~8,1!"=="---" set mac=%%b
  )
 )
-ECHO %mac% >> Details.txt
+ECHO %mac% >> Details.log
 GOTO :EOF
