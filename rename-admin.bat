@@ -12,7 +12,7 @@ setlocal
 for /f "tokens=2 delims==" %%a in ('wmic computersystem get name /value') do set "computername=%%a"
 for /f "tokens=2 delims==" %%a in ('wmic bios get serialnumber /value') do set "serialnumber=%%a"
 echo Renaming computer from %computername% to %serialnumber%
-wmic computersystem where name="%computername%" call rename name="%serialnumber%"
+wmic computersystem where name="%computername%" call rename name="DESKTOP-%serialnumber%"
 endlocal
 
 wmic useraccount where name='Administrator' rename 'NEWUSERNAME'
